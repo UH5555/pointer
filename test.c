@@ -69,7 +69,9 @@
 //	int i = 0;
 //	for (i = 0; i < 12; i++)
 //	{
-//		*(p++);
+//     //*p = i;
+//     //p++;
+//		*p++ = i;
 //	}
 //	//指针越界，野指针
 //	return 0;
@@ -87,3 +89,90 @@
 //	*p = 20;
 //	return 0;
 //}
+
+//int main()
+//{
+//	//int a = 10;
+//	// 指针初始化
+//	//int* pa = &a;//初始化
+//	//int* p = NULL;//NULL-用来初始化指针的，给指针赋值
+//	int a = 10;
+//	int* pa = &a;
+//	*pa = 20;
+//	//指针指向空间释放即使其置NULL
+//	pa = NULL;
+//	//指针使用前检查有效性
+//	if (pa != NULL)
+//	{
+//		*pa = 20;
+//	}
+//	return 0;
+//}
+
+////指针加减运算
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int i = 0;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int* p = arr;
+//	/*for (i = 0; i < sz; i++)
+//	{
+//		printf("%d\n", *p);
+//		p = p + 1;
+//	}*/
+//
+//	for (i = 0; i < 5; i++)
+//	{
+//		printf("%d\n", *p);
+//		p += 2;
+//	}
+//	return 0;
+//}
+
+////指针 - 指针
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	 printf("%d\n", & arr[9] - &arr[0]);//中间元素的个数
+//	return 0;
+//}
+
+//int my_strlen(char* str)
+//{
+//	char* start = str;
+//	char* end = str;
+//	while (*end != '\0')
+//	{
+//		end++;
+//	}
+//	return end - start;
+//}
+//
+//int main()
+//{
+//	//strlen - 求字符串长度 
+//	//递归 - 模拟实现了strlen - 计数器的方式1，递归的方式2
+//	char arr[] = "bit";
+//	int len = my_strlen(arr);
+//	printf("%d\n", len);
+//	return 0;
+//}
+
+////指针关系运算
+////允许指向数组元素的指针与指向数组最后一个元素后面的那个内存位置的指针比较，但是不允许与指向第一个元素之前的那个内存位置的指针比较
+//#define N_VALUES 5
+//float values[N_VALUES];
+//float* vp;
+//for (vp = &values[N_VALUES]; vp > &value[0])
+//{
+//	*--vp = 0;
+//}
+
+int main()
+{
+	int arr[10] = { 0 };
+	printf("%p\n", arr);//地址-首元素的地址
+	printf("%p\n", &arr[0]);
+	return 0;
+}
